@@ -5,29 +5,27 @@ package ops
 import (
     "fmt"
     "calc/interfaces"
-    "calc/mathlib"
+    as "calc/mathlib"
 )
 
 type Calculator struct {
     interfaces.ICalculator
-    addsub mathlib.Addsub
+    addsub interfaces.IAdd
 }
 
-// NewCalculator creates a new instance of Calculator with the given Addsub dependency.
+
+// NewCalculator creates a new instance of Calculator with the given IAdd dependency.
 // If addsub is nil, a default instance will be created.
-func NewCalculator(addsub *mathlib.Addsub) Calculator {
-    var newaddsub mathlib.Addsub
-
+func NewCalculator(addsub interfaces.IAdd) Calculator {
     if addsub == nil {
-        newaddsub = mathlib.Addsub{} // Use the default instance
-    } else {
-        newaddsub = *addsub
+        addsub = as.Addsub{} // Replace with the actual function to create a default instance
     }
-
+    
     return Calculator{
-        addsub: newaddsub,
+        addsub: addsub,
     }
 }
+
 
 
 // Add uses the Addsub struct from the mathlib package to add two integers.
@@ -52,7 +50,7 @@ func (c Calculator) AddMultiply(a, b int) int {
     sum := c.addsub.Add(a, b)
 
     // Calculate the product of the same two numbers using a method from the mathlib package
-    product := mathlib.Multiply(a, b) // Assuming Multiply is defined in mathlib
+    product := as.Multiply(a, b) // Assuming Multiply is defined in mathlib
 
     // Add the sum and the product using a method from the mathlib package
     result := c.addsub.Add(sum, product)

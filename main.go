@@ -5,6 +5,7 @@ package main
 import (
     "fmt"
     "calc/ops"
+	"calc/mycustomadd"
 )
 
 func main() {
@@ -21,4 +22,15 @@ func main() {
     fmt.Printf("Sum: %d\n", sum)
     fmt.Printf("Difference: %d\n", difference)
     fmt.Printf("AddMultiply: %d\n", addmul)
+
+ 
+	ca = ops.NewCalculator(mycustomadd.MyCustomAdd{})
+
+    // Perform some calculations.
+    sum = ca.Add(5, 3)
+    // difference := ca.Subtract(10, 4)
+    // addmul := ca.AddMultiply(3, 5)
+
+    // Display the results.
+    fmt.Printf("Sum: %d\n", sum)
 }
