@@ -1,8 +1,8 @@
 # to run this test
-Go_Unit_Testing\calc> go test .\ops\Calculator_test.go
-ok      command-line-arguments  1.042s
+```Go_Unit_Testing\calc> go test .\ops\Calculator_test.go
+ok      command-line-arguments  1.042s```
 # to run main
-Go_Unit_Testing\calc> go run .
+```Go_Unit_Testing\calc> go run .
 mathlib: Adding 5 and 3 gives us 8
 Adding 5 and 3: 8
 mathlib: Subtracting 4 from 10 gives us 6
@@ -16,4 +16,4 @@ Difference: 6
 AddMultiply: 23
 Custom Add: Adding 5 and 3 gives us 8
 Adding 5 and 3: 8
-Sum: 8
+Sum: 8```
